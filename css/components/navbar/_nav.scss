@@ -1,0 +1,65 @@
+.main-navbar {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  padding: 1rem 2rem;
+  z-index: 100;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in;
+
+  &__logo {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+
+  &__info {
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    list-style: none;
+    padding: 0 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 3px;
+    transform-origin: center;
+    background-color: $primary-color-light;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+  }
+
+  &__item:hover::before,
+  &__item:focus::before {
+    transform: scaleX(0.7);
+  }
+
+  @media screen and (max-width: $breakpoint-tablet) and (min-width: $breakpoint-phone) {
+    &__info {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-phone) {
+    height: 60px;
+
+    &__info {
+      display: none;
+    }
+  }
+}

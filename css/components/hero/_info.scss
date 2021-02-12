@@ -1,0 +1,25 @@
+.hero__info {
+  padding-left: 4rem;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.hero__item {
+  list-style: none;
+  padding-right: 3rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media screen and (max-width: $breakpoint-phone) {
+  .hero__info {
+    font-size: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero__item {
+    padding-top: 1.2rem;
+  }
+}
