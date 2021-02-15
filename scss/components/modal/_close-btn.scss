@@ -1,0 +1,42 @@
+.close__button {
+  position: absolute;
+  right: 4%;
+  top: 4%;
+  padding: 10px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+}
+
+.close__box {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  z-index: -1; // cuz when you click on line event doesn't invoke
+}
+
+@mixin close-line {
+  width: 100%;
+  height: 3px;
+  left: 0;
+  background-color: $white;
+  position: absolute;
+}
+
+.close__inner {
+  @include close-line;
+
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+
+  &::before {
+    @include close-line;
+
+    top: 0;
+    content: '';
+    transform: rotate(90deg);
+  }
+}

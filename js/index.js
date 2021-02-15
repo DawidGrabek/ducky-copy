@@ -129,7 +129,6 @@ class Site {
   }
 
   showModal() {
-    console.log('siema');
     this.DOMElements.modalBackground.classList.add('modal__background--active');
     this.DOMElements.modalBox.classList.add('modal--active');
     document.body.style.overflow = 'hidden';
@@ -138,7 +137,7 @@ class Site {
   closeModal(e) {
     if (
       e.target.classList.contains('modal__background--active') ||
-      e.target.classList.contains('modal-close')
+      e.target.classList.contains('close__button')
     ) {
       this.DOMElements.modalBackground.classList.remove(
         'modal__background--active'
@@ -149,6 +148,7 @@ class Site {
   }
 
   navOnScroll() {
+    // slide scroll
     const options = {
       rootMargin: '40px 0px 0px 0px',
     };
