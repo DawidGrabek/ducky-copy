@@ -1,0 +1,58 @@
+@use './variables' as *;
+.modal__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.modal__container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 150px));
+  justify-content: center;
+  gap: 2rem;
+}
+
+.modal__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 0;
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+
+  &:hover {
+    color: $primary-color-light;
+  }
+
+  & i {
+    font-size: 3rem;
+  }
+
+  & span {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+}
+
+@media screen and (max-width: $breakpoint-phone) {
+  .modal__nav {
+    justify-content: space-around;
+  }
+
+  .modal__container {
+    grid-template-columns: repeat(2, minmax(150px, 170px));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .modal__tile i {
+    font-size: 4rem;
+  }
+
+  .modal__tile span {
+    font-size: 1.6rem;
+  }
+}

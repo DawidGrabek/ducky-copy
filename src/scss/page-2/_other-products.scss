@@ -1,13 +1,15 @@
+@use './variables' as *;
+
 .image1 {
-  background: url('../../../images/mouse.jpg') no-repeat center center;
+  background: url('../../assets/mouse.jpg') no-repeat center center;
 }
 
 .image2 {
-  background: url('../../../images/chair.jpg') no-repeat center center;
+  background: url('../../assets/chair.jpg') no-repeat center center;
 }
 
 .image3 {
-  background: url('../../../images/earbuds.jpg') no-repeat 60% center;
+  background: url('../../assets/earbuds.jpg') no-repeat 60% center;
 }
 
 .product-other {

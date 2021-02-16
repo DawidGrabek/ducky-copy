@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-@import './components/variables';
+@use './variables' as *;
 
-@import './components/navbar/nav';
-@import './components/hamburger';
-@import './components/modal/modal';
-@import './components/hero/hero';
-@import './components/page-2/page';
-@import './components/history/history';
-@import './components/parallax/parallax';
-@import './components/footer/footer';
+@use './navbar/nav' as *;
+@use './hamburger' as *;
+@use './modal/modal' as *;
+@use './hero/hero' as *;
+@use './page-2/page' as *;
+@use './history/history' as *;
+@use './parallax/parallax' as *;
+@use './footer/footer' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 *,
 *:before,
@@ -36,3 +37,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+// .hero__image {
+//   width: 100%;
+//   height: 100vh;
+//   background: url('../../assets/chair.jpg') no-repeat center center;
+// }

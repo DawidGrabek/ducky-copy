@@ -166,3 +166,6 @@ class Site {
     heroObserver.observe(this.DOMElements.hero);
   }
 }
+
+const app = new Site();
+app.InitializeApp();
