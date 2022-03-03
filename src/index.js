@@ -24,13 +24,13 @@ class Site {
     // page 3 - history
     historyHeader: document.querySelector('[data-history-header]'),
     historyArt: document.querySelectorAll('[data-history-section-art]'),
-  };
+  }
 
   InitializeApp() {
-    this.scrollTriggerAnimation();
-    this.addEventListeners();
+    this.scrollTriggerAnimation()
+    this.addEventListeners()
 
-    this.navOnScroll();
+    this.navOnScroll()
   }
 
   scrollTriggerAnimation() {
@@ -44,13 +44,13 @@ class Site {
       {
         autoAlpha: 0,
       }
-    );
+    )
 
     gsap.set([this.DOMElements.heroImage], {
       autoAlpha: 0.2,
-    });
+    })
 
-    const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' } });
+    const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' } })
 
     tl.fromTo(
       this.DOMElements.heroImage,
@@ -66,7 +66,7 @@ class Site {
         this.DOMElements.heroInfoElements,
         { y: '+=50' },
         { y: '-=50', duration: 0.75, autoAlpha: 1, stagger: 0.2 }
-      );
+      )
 
     gsap.fromTo(
       this.DOMElements.productMainImage,
@@ -82,7 +82,7 @@ class Site {
           // markers: true,
         },
       }
-    );
+    )
 
     gsap.fromTo(
       this.DOMElements.historyHeader,
@@ -97,9 +97,8 @@ class Site {
           start: 'top 90%',
         },
       }
-    );
-
-    [...this.DOMElements.productItems, ...this.DOMElements.historyArt].forEach(
+    )
+    ;[...this.DOMElements.productItems, ...this.DOMElements.historyArt].forEach(
       (item, i) => {
         gsap.fromTo(
           item,
@@ -115,23 +114,23 @@ class Site {
               // markers: true,
             },
           }
-        );
+        )
       }
-    );
+    )
   }
 
   addEventListeners() {
     this.DOMElements.hamburgerBoxes.forEach((hamburger) => {
-      hamburger.addEventListener('click', () => this.showModal());
-    });
+      hamburger.addEventListener('click', () => this.showModal())
+    })
 
-    document.addEventListener('click', (e) => this.closeModal(e));
+    document.addEventListener('click', (e) => this.closeModal(e))
   }
 
   showModal() {
-    this.DOMElements.modalBackground.classList.add('modal__background--active');
-    this.DOMElements.modalBox.classList.add('modal--active');
-    document.body.style.overflow = 'hidden';
+    this.DOMElements.modalBackground.classList.add('modal__background--active')
+    this.DOMElements.modalBox.classList.add('modal--active')
+    document.body.style.overflow = 'hidden'
   }
 
   closeModal(e) {
@@ -141,9 +140,9 @@ class Site {
     ) {
       this.DOMElements.modalBackground.classList.remove(
         'modal__background--active'
-      );
-      this.DOMElements.modalBox.classList.remove('modal--active');
-      document.body.style.overflow = 'visible';
+      )
+      this.DOMElements.modalBox.classList.remove('modal--active')
+      document.body.style.overflow = 'visible'
     }
   }
 
@@ -151,21 +150,21 @@ class Site {
     // slide scroll
     const options = {
       rootMargin: '40px 0px 0px 0px',
-    };
+    }
 
     const heroObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
-          this.DOMElements.mainNav.style.transform = 'translateY(0%)';
+          this.DOMElements.mainNav.style.transform = 'translateY(0%)'
         } else {
-          this.DOMElements.mainNav.style.transform = 'translateY(-100%)';
+          this.DOMElements.mainNav.style.transform = 'translateY(-100%)'
         }
-      });
-    }, options);
+      })
+    }, options)
 
-    heroObserver.observe(this.DOMElements.hero);
+    heroObserver.observe(this.DOMElements.hero)
   }
 }
 
-const app = new Site();
-app.InitializeApp();
+const app = new Site()
+app.InitializeApp()
